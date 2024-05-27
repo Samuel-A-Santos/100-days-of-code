@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">second button</button>
+    <script>
+      console.log(document.querySelector("button").innerHTML); // seleciona qualquer elemento da pagina e coloca no JS
+
+      document.querySelector("button").innerHTML = "changed"; // isso só mudará o html dentro do butão
+
+      const buttonElement = document.querySelector(".js-button").innerHTML = "changed2"; // para acessar um outro butão precisamos criar uma classe para o butão, e ao colocar essa nova classe para editar o novo butão colocamos um . e após o nome do butão, exemplo .js-button
+
+      
+      /*
+      console.log(document.title);
+      document.title = "changed";
+
+      console.log(document.body); //DOM combina o HTML e o JS
+      console.log(typeof document.body); // quando o HTML está dentro do JS ele é transformado em um objeto
+
+      console.log(document.body.innerHTML); // retorna todo o html que está no boddy
+
+      //document.body.innerHTML = "changed"; // isso trocará tudo que está no html para a string 'changed'
+      document.body.innerHTML = "<button>aaa</button>"; // é possivel trocar o boddy para o que quiser, por exemplo por um butão igual eu fiz
+      //method é uma função salva dentro do objeto
+      */
+
+      //   document.body.innerHTML = "hello";
+      //   document.title = "good job"; // DOM
+    </script>
+  </body>
+</html>

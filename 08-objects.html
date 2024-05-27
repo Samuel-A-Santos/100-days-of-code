@@ -22,31 +22,72 @@
       // delete product.newProperty
       // console.log(product)
 
-      const product2 = {
-        name: "shirt",
-        ["deliver-time"]: "1day",
-        rating: {
-          stars: 4.5,
-          count: 87,
-        },
-        fun: function function1() {
-          console.log("function inside object");
-        },
+      // const product2 = {
+      //   name: "shirt",
+      //   ["deliver-time"]: "1day",
+      //   rating: {
+      //     stars: 4.5,
+      //     count: 87,
+      //   },
+      //   fun: function function1() {
+      //     console.log("function inside object");
+      //   },
+      // };
+      // console.log(product2);
+      // console.log(product2.name);
+      // console.log(product2["name"]);
+      // console.log(product2["delivery-time"]);
+
+      // console.log(product2.rating.count);
+      // product2.fun();
+
+      // console.log(typeof console.log); //method
+
+      // console.log(JSON.stringify(product2));
+
+      // const jsonString = JSON.stringify(product2);
+      // console.log(JSON.parse(jsonString));
+
+      console.log("hello".length); //string pode ter metodos e propriedades
+      console.log("hello".toUpperCase());
+      // O motivo se chama autoboxing, pois o JS automaticamente envelopa a string em um objeto, também funciona para booleanos e numeros, só não vai funcionar para null e undefined
+
+      const object1 = {
+        message: "hello",
       };
-      console.log(product2);
-      console.log(product2.name);
-      console.log(product2["name"]);
-      console.log(product2["delivery-time"]);
+      const object2 = object1; // copy by reference, signifca que ao copiar um objeto o java script não vai copiar todo o objeto e sim apenas a referencia do objeto
 
-      console.log(product2.rating.count);
-      product2.fun();
+      object1.message = "good morning";
+      console.log(object1); // mesmo usando CONST ainda é possivel mudar o valor dentro do objeto, como foi feito acima
+      console.log(object2); // mesmo mudando apenas copiando a referencia do objeto1 para o objeto2, e acima trocando o valor do objeto1 o objeto2 segue as mesmas mudanças
 
-      console.log(typeof console.log); //method
+      const object3 = {
+        message: "good morning",
+      };
 
-      console.log(JSON.stringify(product2));
+      console.log(object3 === object1); //mesmo um objeto tendo o mesmo valor eles vão retornar falso em caso de alguma comparação, pois o código está comparando as referencias não os valores dentro
+      console.log(object2 === object1); // já esse irá retornar true, pois acima na linha 58 eu atribui ao objeto2 a mesma referencia do objeto1
 
-      const jsonString = JSON.stringify(product2);
-      console.log(JSON.parse(jsonString));
+      const object4 = {
+        message: "good morning",
+        price: 799,
+      };
+      //const message = object4.message; ambas as linhas fazem a mesma coisa, a de baixo tem o nome de destructuring
+      const { message, price } = object4; // destructuring é uma maneira mais facil de tirar propriedades do objeto
+      console.log(message, price);
+
+      const object5 = {
+        //message: message, aqui eu estou pegando o message já declarado acima e estou passando o nome de message também, então ele retornará message: good morning
+        // method: function fun1() {
+        //   console.log('method')
+        // },
+        method() {
+          console.log("method"); // esse código faz o mesmo que o código acima, não é necessario o uso da palavra function para criar uma função apenas () e o corpo da função {}
+        },
+        message, // esse código faz a mesma coisa que o código acima message: message
+      }; //shorthand method
+      console.log(object5);
+      object5.method();
     </script>
   </body>
 </html>
