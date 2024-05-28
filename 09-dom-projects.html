@@ -4,8 +4,56 @@
     <title>DOM Projects</title>
   </head>
   <body>
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subscribe()" class="js-subscribe-button">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input
+      placeholder="Cost of order"
+      class="js-cost-input"
+      onkeydown="handleCostKeydown(event)"
+    />
+    <button
+      onclick="
+    calculateTotal()
+    "
+    >
+      Calculate
+    </button>
+    <p class="js-total-cost"></p>
+
     <script>
-      
+      String(25); //igual o Number() só que converte um numero pra string
+      window.alert
+
+      window //representa o navegador, diferente do documento que seria a tela apenas, exemplo o window também representa o console, popups também fazem parte do navegador, exemplo window.alert
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value); //sempre que pegamos um valor do DOM ele retornará como uma string, então temos que usar a função Number(valor pegado do input) e colocar o valor que pegamos do input dentro da função, caso contrario ela irá retornar uma string
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+        if (buttonElement.innerText === "Subscribe") {
+          //innerText pega o apenas o texto, já o innerHTML pega espaços etc
+          buttonElement.innerHTML = "Subscribed";
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+        }
+      }
     </script>
   </body>
 </html>
