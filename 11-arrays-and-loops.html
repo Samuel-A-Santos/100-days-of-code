@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and loops</title>
+  </head>
+  <body>
+    <script>
+      const myArray = [10, 20, 30];
+      console.log(myArray);
+
+      myArray[0] = 99;
+      console.log(myArray);
+
+      [1, "hello", true, { name: "socks" }, [1, 2]]; //podemos adicionar qualquer tipo de dado em um array, ou seja, boolean, string, objeto, numero...
+
+      console.log(myArray.length); // retorna quantos index tem dentro do array
+
+      myArray.push(100); // adiciona o que estiver no parenteses para o final do array.
+      myArray.push({ name: "samuel" });
+      console.log(myArray);
+
+      myArray.splice(0, 1) //splice remove algo do array, o primeiro nome nesse exemplo (0) quer dizer que irá remover o index 0, o segundo representa quantos dados voce quer remover, no caso 1
+      console.log(myArray)
+    </script>
+  </body>
+</html>
