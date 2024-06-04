@@ -1,12 +1,6 @@
 const todoList = [
-  {
-    name: "make dinner",
-    dueDate: "2022-12-22",
-  },
-  {
-    name: "wash dishes",
-    dueDate: "2022-12-22",
-  },
+  { name: "make dinner", dueDate: "03/06/2024" },
+  { name: "wash dishes", dueDate: "03/06/2024" },
 ];
 
 renderTodoList();
@@ -16,17 +10,13 @@ function renderTodoList() {
 
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
-    //const name = todoObject.name;
-    //const dueDate = todoObject.dueDate;
+    //const name = todoObject.name; esse código faz o mesmo que o abaixo, é apenas um shortcut
     const { name, dueDate } = todoObject;
-    const html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-      <button onclick="
-        todoList.splice(${i}, 1);
-        renderTodoList();
-      " class="delete-todo-button">Delete</button> 
-    `;
+    //const dueDate = todoObject.dueDate;
+    const html = `<p>${name} ${dueDate} <button onclick="
+      todoList.splice(${i}, 1);
+      renderTodoList()
+    ">delete</button></p>`;
     todoListHTML += html;
   }
 
@@ -37,12 +27,12 @@ function addTodo() {
   const inputElement = document.querySelector(".js-name-input");
   const name = inputElement.value;
 
-  const dateInputElement = document.querySelector(".js-due-date-input");
-  const dueDate = dateInputElement.value;
+  const dueInputElement = document.querySelector(".js-due-date-input");
+  const dueDate = dueInputElement.value;
 
   todoList.push({
-    //name: name,
-    //dueDate: dueDate,
+    // name: name,
+    // dueDate: dueDate,
     name,
     dueDate,
   });
